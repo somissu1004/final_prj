@@ -4,14 +4,36 @@ resource "azurerm_network_security_group" "mynsg" {
     resource_group_name = azurerm_resource_group.user07-rg.name
     
     security_rule {
-        name                       = "SSH"
+        name                       = "SSH-JENKINS"
         priority                   = 1001
         direction                  = "Inbound"
         access                     = "Allow"
         protocol                   = "Tcp"
         source_port_range          = "*"
         destination_port_range     = "22"
-        source_address_prefix      = "*"
+        source_address_prefix      = "52.141.37.209"
+        destination_address_prefix = "*"
+    }
+       security_rule {
+        name                       = "SSH-HOME"
+        priority                   = 1002
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "22"
+        source_address_prefix      = "39.118.146.165"
+        destination_address_prefix = "*"
+    }
+       security_rule {
+        name                       = "SSH-ADMIN"
+        priority                   = 1003
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        source_port_range          = "*"
+        destination_port_range     = "22"
+        source_address_prefix      = "52.141.32.240"
         destination_address_prefix = "*"
     }
  security_rule {
