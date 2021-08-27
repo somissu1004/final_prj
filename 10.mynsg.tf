@@ -11,7 +11,7 @@ resource "azurerm_network_security_group" "mynsg" {
         protocol                   = "Tcp"
         source_port_range          = "*"
         destination_port_range     = "22"
-        source_address_prefix      = "52.141.37.209"
+        source_address_prefix      = "52.231.100.69"
         destination_address_prefix = "*"
     }
        security_rule {
@@ -33,7 +33,7 @@ resource "azurerm_network_security_group" "mynsg" {
         protocol                   = "Tcp"
         source_port_range          = "*"
         destination_port_range     = "22"
-        source_address_prefix      = "52.141.32.240"
+        source_address_prefix      = "20.41.85.103"
         destination_address_prefix = "*"
     }
  security_rule {
